@@ -1,4 +1,6 @@
 import { JSX } from "./types";
+import React from "./react";
+import App from "./App";
 
 const ReactDOM = {
   render: (element: JSX, container: HTMLElement): void => {
@@ -25,6 +27,11 @@ const ReactDOM = {
     }
 
     container.appendChild(domElement);
+  },
+  rerender: () => {
+    const rootContainer = document.getElementById("root");
+    rootContainer.removeChild(rootContainer.firstChild);
+    ReactDOM.render(<App />, rootContainer);
   },
 };
 
