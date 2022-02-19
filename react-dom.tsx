@@ -1,4 +1,4 @@
-import { JSX } from "./types";
+import { IGlobalState, JSX } from "./types";
 import React from "./react";
 import App from "./App";
 
@@ -28,9 +28,10 @@ const ReactDOM = {
 
     container.appendChild(domElement);
   },
-  rerender: () => {
+  rerender: (globalState: IGlobalState) => {
     const rootContainer = document.getElementById("root");
     rootContainer.removeChild(rootContainer.firstChild);
+    globalState.cursor = 0;
     ReactDOM.render(<App />, rootContainer);
   },
 };

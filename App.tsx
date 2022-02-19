@@ -1,5 +1,6 @@
 import React from "./react";
 import { Component } from "./types";
+import { Counter } from "./Counter";
 
 const App: Component = () => (
   <div>
@@ -7,6 +8,7 @@ const App: Component = () => (
     <main>
       <h1>Page title</h1>
       <p>lorem...</p>
+      <Counter initialValue={646} />
     </main>
     <footer>Footer</footer>
   </div>

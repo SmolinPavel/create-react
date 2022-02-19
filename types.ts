@@ -9,3 +9,8 @@ interface IElement {
 }
 
 export type IPropsWithChildren<P = {}> = P & { children?: JSX[] };
+
+export interface IGlobalState {
+  states: any[];
+  cursor: number;
+}
